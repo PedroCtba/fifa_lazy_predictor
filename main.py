@@ -48,8 +48,8 @@ with X:
     we = 1/(10**(((-1)*(p1-p2))/600)+1)
 
 # Show odd's of victory
-team_1_container.metric(f"Chance vitória:", f"{we.round(2) * 100}%")
-team_2_container.metric(f"Chance vitória:", f"{(1 - we).round(2) * 100}%")
+team_1_container.metric(f"Chance vitória:", f"{int(we.round(2) * 100)}%")
+team_2_container.metric(f"Chance vitória:", f"{int((1 - we).round(2) * 100)}%")
 
 # Center odd's fo win from both teams
 st.markdown('''
