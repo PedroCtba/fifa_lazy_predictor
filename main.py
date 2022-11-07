@@ -19,6 +19,7 @@ team_1_container, X, team_2_container = st.columns(3)
 # Write the header
 with header:
     st.title("Seja bem-vindo comparador fifa!\n ~ Power by Dhauz")
+    st.markdown("")
 
 # Make the comparison section
 with team_1_container:
@@ -38,14 +39,13 @@ with team_2_container:
 with X:
     # Show icon
     st.image(icon)
-    
+
     # Get p1, and 2p2
     p1 = data.loc[team_1][0]
     p2 = data.loc[team_2][0]
     
     # Calculate We
     we = 1/(10**(((-1)*(p1-p2))/600)+1)
-    my_bar = st.progress(0)
 
 # Show odd's of victory
 team_1_container.metric(f"Chance vitória:", f"{we.round(2) * 100}%")
